@@ -13,13 +13,13 @@ public class Country {
 
     @Id
     @Column(length = 100 , name = "countryId" , nullable = false,updatable = false)
-    private Integer countryId ;
+    private String countryId ;
 
     @Column(length = 100 , name = "countryCode" , nullable = false,updatable = false)
     private String countryCode ;
 
     @Column(length = 100 , name = "countryPopulation" , nullable = false,updatable = false)
-    private Integer countryPopulation ;
+    private String countryPopulation ;
 
     @Column(length = 100 , name = "countryCapital" , nullable = false,updatable = false)
     private String countryCapital ;
@@ -33,7 +33,7 @@ public class Country {
         return countryName;
     }
 
-    public Integer getCountryId() {
+    public String getCountryId() {
         return countryId;
     }
 
@@ -41,7 +41,7 @@ public class Country {
         return countryCode;
     }
 
-    public Integer getCountryPopulation() {
+    public String getCountryPopulation() {
         return countryPopulation;
     }
 
@@ -49,7 +49,7 @@ public class Country {
         return countryCapital;
     }
 
-    public Country(String countryName, Integer countryId, String countryCode, Integer countryPopulation, String countryCapital) {
+    public Country(String countryName, String countryId, String countryCode, String countryPopulation, String countryCapital) {
         this.countryName = countryName;
         this.countryId = countryId;
         this.countryCode = countryCode;

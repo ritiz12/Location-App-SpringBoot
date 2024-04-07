@@ -34,4 +34,19 @@ public class CountryService {
         }
         return response;
     }
+
+
+    public GetCountryInformationResponse getCountryInformation(String countryName) {
+        final Iterable<CountryInformationSummary> result = countryRepository.findByCountryName(countryName);
+        final GetCountryInformationResponse response = new GetCountryInformationResponse();
+
+        for (final CountryInformationSummary information : result) {
+            response.addCountryInformation(information);
+        }
+
+        return response;
+    }
+
+
+
 }

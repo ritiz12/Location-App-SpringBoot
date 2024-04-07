@@ -1,10 +1,7 @@
 package com.example.Location_App.country.api;
 
 import com.example.Location_App.country.core.CountryService;
-import com.example.Location_App.country.data.GetCapitalRequest;
-import com.example.Location_App.country.data.GetCapitalResponse;
-import com.example.Location_App.country.data.GetCountryRequest;
-import com.example.Location_App.country.data.GetCountryResponse;
+import com.example.Location_App.country.data.*;
 import com.example.Location_App.country.domian.Country;
 import org.aspectj.weaver.patterns.TypePatternQuestions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +30,14 @@ public class CountryAPI {
     public ResponseEntity<GetCapitalResponse> getCountriesCapital(final String countryCapital  )
     {
         return ResponseEntity.ok(countryService.getCountriesCapital(new GetCapitalRequest(countryCapital)));
+    }
+
+    //@GetMapping("/countryName/{countryName}")
+    @GetMapping("/countryName/{countryName}")
+    public ResponseEntity<GetCountryInformationResponse> getCountryInformation(@PathVariable String countryName)
+    {
+        GetCountryInformationResponse response = countryService.getCountryInformation(countryName);
+        return ResponseEntity.ok(response);
     }
 
 
